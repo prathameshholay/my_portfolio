@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping and Delivery</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script>
+        function copyEmail() {
+            const email = document.getElementById('email').textContent;
+            navigator.clipboard.writeText(email).then(() => {
+                alert('Email copied to clipboard');
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Shipping and Delivery</h1>
+    </header>
+    <main>
+        <p>Last updated on Sep 12, 2024</p>
+
+        <section>
+            <h2>International and Domestic Shipping</h2>
+            <p>For International buyers, orders are shipped and delivered through registered international courier companies and/or International Speed Post only. For domestic buyers, orders are shipped through registered domestic courier companies and/or Speed Post only.</p>
+            <strong><b><p>This section is yet to update dont consider anything yet.</p></b></strong>
+            </section>
+
+        <section>
+            <h2>Delivery Timelines</h2>
+            <p>Orders are shipped within 0-7 days or as per the delivery date agreed at the time of order confirmation. Shipment delivery is subject to courier company or postal authority norms. We guarantee handing over the consignment within 0-7 days from the date of order and payment, or as per the agreed delivery date.</p>
+            <b><p>This section is yet to update dont consider anything yet.</p></b>
+        </section>
+
+        <section>
+            <h2>Delivery Address</h2>
+            <p>All orders will be delivered to the address provided by the buyer. Delivery confirmation will be sent to the email address provided during registration.</p>
+            <b><p>This section is yet to update dont consider anything yet.</p></b>
+        </section>
+
+        <section>
+            <h2>Contact Us</h2>
+            <p>If you encounter any issues with the delivery of our services, feel free to reach out to our helpdesk:</p>
+            <div id="email-container">
+                <address id="email">algo.work101@gmail.com</address>
+                <button onclick="copyEmail()" class="copy-btn">Copy Email</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 PRATHAMESH SACHIN HOLAY</p>
+    </footer>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        main {
+            padding: 20px;
+            background: #fff;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #email-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #email {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .copy-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background-color: #218838;
+        }
+
+        .copy-btn:active {
+            background-color: #1e7e34;
+        }
+    </style>
+</body>
+</html>
