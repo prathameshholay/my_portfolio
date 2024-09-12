@@ -42,6 +42,8 @@ header {
   padding-top: 102px;
 }
 
+/* Default styles for larger screens */
+/* Default styles for larger screens */
 nav {
   display: flex;
   justify-content: center;
@@ -50,6 +52,13 @@ nav {
   font-size: 23px;
   top: 28px;
   z-index: 1;
+  background-color: black; /* Ensure background color for visibility */
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 nav a {
@@ -57,7 +66,6 @@ nav a {
   border-radius: 10px;
   margin: 10px 20px;
   text-decoration: none;
-  justify-content: space-between;
   padding: 10px 20px;
   transition: 0.5s ease;
   display: inline-block;
@@ -66,21 +74,89 @@ nav a {
 nav a:hover {
   border: 2px solid white;
   color: white;
-  opacity: 1;
   background-color: black;
+}
+
+/* Styles for smaller screens */
+.nav-toggle {
+  display: none; /* Hide toggle button on larger screens */
 }
 
 @media screen and (max-width: 600px) {
   nav {
-    flex-direction: column;
-    align-items: center;
+    position: fixed;
     top: 0;
-    /* Adjust the top position for better visibility on small screens */
+    right: 0;
+    width: 250px; /* Width of the drawer */
+    height: 100%;
+    background-color: black;
+    transform: translateX(100%); /* Hide drawer initially */
+    transition: transform 0.3s ease;
+    flex-direction: column;
+    z-index: 1;
   }
 
-  nav a {
-    margin: 5px 0;
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px; /* Space from top */
+    width: 100%;
   }
+
+  .nav-links a {
+    margin: 10px 0; /* Adjust margin for smaller screens */
+  }
+
+  .nav-toggle {
+    display: block; /* Show the toggle button on smaller screens */
+    position: absolute;
+    top: 15px; /* Adjust top position */
+    right: 15px; /* Adjust right position */
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 2; /* Ensure the button is on top */
+  }
+
+  nav.open {
+    transform: translateX(0); /* Show drawer when open */
+  }
+}
+
+/* Drawer Styling */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Hidden off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  transition: right 0.3s ease;
+  z-index: 1; /* Ensure drawer is above other elements */
+}
+
+.drawer.open {
+  right: 0;
+}
+
+.drawer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.drawer ul li a {
+  color: white;
+  padding: 15px;
+  display: block;
+  text-decoration: none;
+}
+
+.drawer ul li a:hover {
+  background-color: #444;
 }
 
 section {
@@ -271,9 +347,11 @@ footer {
 }
 
 /* image-div code */
+/* Default styles for larger screens */
 .hero-div {
   display: flex;
   align-items: center;
+  margin: 0 auto; /* Center the content */
 }
 
 .profile-image {
@@ -286,14 +364,11 @@ footer {
 .intro-text {
   flex: 1;
   font-family: 'Roboto', sans-serif;
-  /* Use the Google Fonts Roboto font */
 }
 
 #intro {
   font-size: 1.2em;
-  /* Adjust the font size as needed */
   line-height: 1.5;
-  /* Adjust the line height for better readability */
 }
 
 .img-div {
@@ -316,13 +391,39 @@ footer {
   margin: 10px;
 }
 
+/* Styles for screens smaller than 600px */
 @media screen and (max-width: 600px) {
+  .hero-div {
+    flex-direction: column; /* Stack profile image and text vertically */
+    align-items: center; /* Center align the items */
+    text-align: center; /* Center align text */
+  }
+
+  .profile-image {
+    width: 150px; /* Smaller profile image */
+    height: 150px;
+    margin: 10px 0; /* Adjust margin for vertical stacking */
+  }
+
+  #intro {
+    font-size: 1em; /* Reduce font size for smaller screens */
+  }
+
+  .img-div {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .img-div p {
+    font-size: 1.2em; /* Adjust font size for smaller screens */
+  }
+
   .img-div img {
-    width: 40px;
+    width: 40px; /* Adjust image size */
     height: 40px;
-    margin: 8px;
+    margin: 8px; /* Adjust margin for smaller screens */
   }
 }
+
 
 /* projects section code here  */
 .projects-container {
@@ -493,4 +594,37 @@ button:hover {
 .social-link {
   display: inline-block;
   margin-right: 20px;
+}
+
+
+/* Drawer Styling */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Hidden off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  transition: right 0.3s ease;
+}
+
+.drawer.open {
+  right: 0;
+}
+
+.drawer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.drawer ul li a {
+  color: white;
+  padding: 15px;
+  display: block;
+  text-decoration: none;
+}
+
+.drawer ul li a:hover {
+  background-color: #444;
 }
